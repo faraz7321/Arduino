@@ -1,24 +1,25 @@
-int Led = 13 ;// Deklaration des LED-Ausgangspin
-int Sensor = 10; // Deklaration des Sensor-Eingangspin
-int val; // Temporaere Variable
- 
-void setup ()
+// KY-002 VIBRATION SWITCH
+int Led = 13;    // declaration of the LED output pin
+int Sensor = 10; // Declaration of the sensor input pin
+int val;         // Temporary variable
+
+void setup()
 {
-  pinMode (Led, OUTPUT) ; // Initialisierung Ausgangspin
-  pinMode (Sensor, INPUT) ; // Initialisierung Sensorpin
-  digitalWrite(Sensor, HIGH); // Aktivierung interner Pull-Up Widerstand
+  pinMode(Led, OUTPUT);       // Initialize output pin
+  pinMode(Sensor, INPUT);     // Initialize sensor pin
+  digitalWrite(Sensor, HIGH); // Activate internal pull-up resistor
 }
- 
-void loop ()
+
+void loop()
 {
-  val = digitalRead (Sensor) ; // Das gegenwärtige Signal am Sensor wird ausgelesen
- 
-  if (val == HIGH) // Falls ein Signal erkannt werden konnte, wird die LED eingeschaltet.
+  val = digitalRead(Sensor); // The current signal at the sensor is read out
+
+  if (val == HIGH) // If a signal could be detected, the LED is switched on.
   {
-    digitalWrite (Led, LOW);
+    digitalWrite(Led, LOW);
   }
   else
   {
-    digitalWrite (Led, HIGH);
+    digitalWrite(Led, HIGH);
   }
 }
